@@ -1,0 +1,11 @@
+#game-board {
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(20, 40px);
+  grid-template-rows: repeat(20, 40px);
+  border: 2px solid #fff;
+  position: relative;
+  background-color: black;
+} 

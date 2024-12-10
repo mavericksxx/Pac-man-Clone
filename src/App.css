@@ -1,0 +1,93 @@
+.App {
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#game-board {
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(20, 40px);
+  grid-template-rows: repeat(20, 40px);
+  border: 2px solid #fff;
+  position: relative;
+  background-color: black;
+}
+
+.score {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: red;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ghost-skirt {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background: inherit;
+  border-radius: 0 0 20px 20px;
+}
+
+.ghost-eyes {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.ghost-eye {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.ghost-eye::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 4px;
+  height: 4px;
+  background: black;
+  border-radius: 50%;
+}
+
+.ghost-skirt::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: inherit;
+  border-radius: 0 0 10px 10px;
+  opacity: 0.7;
+}
+
+@keyframes powerMode {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.power-mode {
+  animation: powerMode 0.5s infinite;
+} 
