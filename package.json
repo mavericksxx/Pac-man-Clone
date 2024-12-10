@@ -14,5 +14,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://YOUR_GITHUB_USERNAME.github.io/REPOSITORY_NAME"
+  "homepage": "https://mavericksxx.github.io/Pac-man-Clone"
 }
