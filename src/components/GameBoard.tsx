@@ -9,6 +9,7 @@ interface GameBoardProps {
   pacmanPosition: Position;
   ghostPosition: Position;
   pellets: Position[];
+  walls: Position[];
   onPacmanMove: (newPosition: Position) => void;
 }
 
@@ -16,16 +17,19 @@ const GameBoard: React.FC<GameBoardProps> = ({
   pacmanPosition,
   ghostPosition,
   pellets,
+  walls,
   onPacmanMove
 }) => {
   return (
     <div id="game-board">
+      {walls.map((wall, index) => (
+        <Wall key={`wall-${wall.x}-${wall.y}`} position={wall} />
+      ))}
+      {pellets.map((pellet, index) => (
+        <Pellet key={`pellet-${pellet.x}-${pellet.y}`} position={pellet} />
+      ))}
       <Pacman position={pacmanPosition} />
       <Ghost position={ghostPosition} />
-      {pellets.map((pellet, index) => (
-        <Pellet key={`${pellet.x}-${pellet.y}`} position={pellet} />
-      ))}
-      {/* Walls will be rendered based on grid */}
     </div>
   );
 };
